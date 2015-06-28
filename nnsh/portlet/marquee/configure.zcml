@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="nnsh.portlet.marquee">
+
+    <five:registerPackage package="." initialize=".initialize" />
+
+    <genericsetup:registerProfile
+       name="default"
+       title="Marquee"
+       directory="profiles/default"
+       description="Marquee portlet"
+       provides="Products.GenericSetup.interfaces.EXTENSION"
+       />
+
+     <!-- Register the portlet -->
+
+     <!-- If the portlet has no configurable parameters, you can remove
+          the EditForm declaration in marquee.py and delete
+          the 'editview' attribute from this statement.
+       -->
+
+     <plone:portlet
+         name="nnsh.portlet.marquee.Marquee"
+         interface=".marquee.IMarquee"
+         assignment=".marquee.Assignment"
+         view_permission="zope2.View"
+         edit_permission="cmf.ManagePortal"
+         renderer=".marquee.Renderer"
+         addview=".marquee.AddForm"
+         editview=".marquee.EditForm"
+         />
+
+</configure>

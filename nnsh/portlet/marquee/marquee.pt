@@ -1,0 +1,22 @@
+<div class="marquee_page">
+<dl class="portlet portletMarquee"
+    i18n:domain="nnsh.portlet.marquee">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+            <tal:title content="view/data/marqueeTitle" />
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem odd">
+            <div tal:content="structure view/data/text" />
+    </dd>
+<!--
+    <dd class="portletFooter">
+        <span class="portletBottomLeft"></span>
+        Footer
+        <span class="portletBottomRight"></span>
+    </dd>
+-->
+</dl>
+</div>
